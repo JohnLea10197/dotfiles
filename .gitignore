@@ -1,8 +1,9 @@
 nvim/.netrwhist
-zsh/.zcompdump-ethan-5.8
+zsh/.zcompdump-*
 zsh/.zsh_history
 zsh/.zcompdump
 pulse/*
+pulse
 nitrogen/bg-saved.cfg
 mpd/playlists/*
 mpd/state/*
