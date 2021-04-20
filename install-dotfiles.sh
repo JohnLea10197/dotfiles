@@ -9,6 +9,7 @@ sudo cp zshenv /etc/zsh/zshenv & echo -e "copied the repo's version of zshenv to
 cd ~/.config
 
 #remove existing symlinks, you should only ever run this script once but fail-safes or whatever. Although if I add more dotfiles in the future running it again will be necessary so future-proofing
+#todo: don't remove existing symlinks and just tell the shell to not update those files if they already exist
 rm -rf mpd & echo "deleted existing symlink for mpd config files"
 rm -rf ncmpcpp & echo "deleted existing symlink for ncmpcpp config files"
 rm -rf nvim & echo "deleted existing symlink for neovim config files"
