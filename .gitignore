@@ -11,3 +11,4 @@ mpd/database
 mpd/log
 mpd/pid
 mpd/sticker.sql
+polybar/config.*
