@@ -58,7 +58,7 @@ module-margin-right = 0
 font-0 = Source Code Pro:antialias=true:pixelsize=10;1
 font-1 = Material Icons:fontformat=truetype:size=12:antialias=true;2
 
-modules-left = applauncher separator i3 xwindow
+modules-left = applauncher separator bspwm xwindow
 modules-center = 
 modules-right = nowplaying mpdscroll mpd separator pulseaudio separator date 
 
@@ -143,16 +143,18 @@ label-empty-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
-[module/i3]
-type = internal/i3
-ws-icon-0 = 1;
-ws-icon-1 = 2; 
-ws-icon-2 = 3; 
-ws-icon-3 = 4; 
-ws-icon-4 = 5; 
-ws-icon-5 = 6; 
-
 format = <label-state> <label-mode>
+
+pin-workspaces = ture
+
+inline-mode = false
+
+enable-click = true
+
+enable-scroll = true
+
+reverse-scroll = true
+
 index-sort = true
 wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
@@ -162,11 +164,6 @@ label-mode-padding = 0
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
-; focused = Active workspace on focused monitor
-label-focused = %name%
-label-focused-background = ${module/bspwm.label-focused-background}
-label-focused-underline = ${module/bspwm.label-focused-underline}
-label-focused-padding = 1
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused-padding = 1
@@ -178,13 +175,53 @@ label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${module/bspwm.label-urgent-background}
-label-urgent-padding = ${module/bspwm.label-urgent-padding}
-
 ; Separator in between workspaces
 ; label-separator = |
 
+
+
+;[module/i3]
+;type = internal/i3
+;ws-icon-0 = 1;
+;ws-icon-1 = 2; 
+;ws-icon-2 = 3; 
+;ws-icon-3 = 4; 
+;ws-icon-4 = 5; 
+;ws-icon-5 = 6; 
+;
+;format = <label-state> <label-mode>
+;index-sort = true
+;wrapping-scroll = false
+;; Only show workspaces on the same output as the bar
+;;pin-workspaces = true
+;
+;label-mode-padding = 0
+;label-mode-foreground = #000
+;label-mode-background = ${colors.primary}
+;
+;; focused = Active workspace on focused monitor
+;label-focused = %name%
+;label-focused-background = ${module/bspwm.label-focused-background}
+;label-focused-underline = ${module/bspwm.label-focused-underline}
+;label-focused-padding = 1
+;
+;; unfocused = Inactive workspace on any monitor
+;label-unfocused-padding = 1
+;
+;; visible = Active workspace on unfocused monitor
+;label-visible = %index%
+;label-visible-background = ${self.label-focused-background}
+;label-visible-underline = ${self.label-focused-underline}
+;label-visible-padding = ${self.label-focused-padding}
+;
+;; urgent = Workspace with urgency hint set
+;label-urgent = %index%
+;label-urgent-background = ${module/bspwm.label-urgent-background}
+;label-urgent-padding = ${module/bspwm.label-urgent-padding}
+;
+;; Separator in between workspaces
+;; label-separator = |
+;
 
 [module/mpd]
 type = internal/mpd
