@@ -1,0 +1,4 @@
+xset -b
+~/bin/./screenlayout.sh
+nitrogen --restore
+sxhkd &

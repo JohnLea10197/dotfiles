@@ -11,6 +11,10 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 SESSION=${1:-xfce-session}
 
+pulseaudio --kill
+start-pulseaudio-x11
+sxhkd &
+
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
@@ -64,8 +68,3 @@ get_session(){
 }
 
 exec $(get_session "$1")
-
-pulseaudio --kill
-start-pulseaudio-x11
-sxhkd &
-
