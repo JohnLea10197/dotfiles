@@ -1,8 +1,8 @@
 super + Return
-    st
+    alacritty
 
 super + r
-    dmenu_run
+    rofi -show drun -show-icons -drun-icon-theme Papirus -theme /home/ethan/.config/rofi/sidetab.rasi
 
 #Close focused window
 super + q
@@ -25,10 +25,13 @@ super + shift + {0-9}
     bspc node -d {0-9} && bspunhide
 
 super + f
-    bspfullscreen
+    bspc node -t fullscreen || bspc node -t tiled
 
 super + space
-    bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+    bspc node -t floating || bspc node -t tiled
+
+super + button1 + drag
+    bspc node -t floating
 
 super + shift + {h,j,k,l}
     bspc node -s {west,south,north,east}

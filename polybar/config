@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #60002734 
+background = #aa0c0d0e
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfe3ee 
@@ -31,7 +31,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/status]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = HDMI-0
 width = 100%
 height = 30
 ;offset-x = 1%
@@ -64,8 +64,8 @@ modules-right = nowplaying mpdscroll mpd separator pulseaudio separator date
 
 tray-position = center
 tray-padding = 2
-tray-background = #60002734 
-;wm-restack = bspwm
+tray-background = ${colors.background} 
+wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
@@ -78,6 +78,54 @@ tray-background = #60002734
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+
+[bar/status-mon2]
+monitor = DP-3
+width = 100%
+height = 30
+;offset-x = 1%
+;offset-y = 1%
+radius = 0.0
+fixed-center = false
+bottom = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Source Code Pro:antialias=true:pixelsize=10;1
+font-1 = Material Icons:fontformat=truetype:size=12:antialias=true;2
+
+modules-left = applauncher separator bspwm xwindow
+modules-center = 
+modules-right = nowplaying mpdscroll mpd separator pulseaudio separator date 
+
+wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
 
 [module/separator]
 type = custom/text
