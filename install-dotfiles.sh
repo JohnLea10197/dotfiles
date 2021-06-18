@@ -17,7 +17,9 @@ rm -rf polybar & echo "deleted existing symlink for polybar"
 rm -rf sxhkd & echo "deleted existing symlink for sxhkd"
 rm -rf bspwm & echo "deleted existing symlink for bspwm"
 rm -rf openbox & echo "deleted existing symlink for openbox"
-rm -rf compton.conf & echo "deleted existing symlink for compton"
+rm -rf picom.conf & echo "deleted existing symlink for picom"
+rm -rf berry & echo "deleted existing symlink for berry window manager"
+rm -rf xfce4 & echo "deleted existing symlink for xfce4"
 rm -rf zsh & echo -e "deleted existing symlink for zsh config files \n"
 
 #add new symlinks
@@ -28,7 +30,9 @@ ln -s $dothome/polybar polybar & echo "successfully created symlink for polybar"
 ln -s $dothome/sxhkd sxhkd & echo "successfully created symlink for sxhkd"
 ln -s $dothome/bspwm bspwm & echo "successfully created symlink for bspwm"
 ln -s $dothome/openbox openbox & echo "successfully created symlink for openbox"
-ln -s $dothome/compton.conf compton.conf & echo "successfully created symlink for compton"
+ln -s $dothome/picom.conf picom.conf & echo "successfully created symlink for picom"
+ln -s $dothome/berry berry & echo "successfully created symlink for berry window manager"
+ln -s $dothome/xfce4 xfce4 & echo "successfully created symlink for xfce4"
 ln -s $dothome/zsh zsh & echo -e "successfully created symlink for zsh \n"
 
 #add new symlinks that aren't in the usual .config directory

@@ -4,9 +4,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 ~/bin/./screenlayout.sh &
 nitrogen --restore &
-pulseaudio --kill
-start-pulseaudio-x11
-compton &
+picom --experimental-backend &
 killall polybar
 polybar status &
 polybar status-mon2 &
@@ -24,9 +22,9 @@ bspc config window_gap          12
 bspc config split_ratio          0.55
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
-bspc config bottom_padding       40
-bsp-layout set tall --master-size 0.6
-bsp-layout set tall
+bspc config bottom_padding       0
+bsp-layout set tall -- --master-size 0.55
+#bsp-layout set tall
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
@@ -37,5 +35,3 @@ bspc rule -a Steam desktop=^6 follow=on
 bspc rule -a discord desktop=^7
 
 lxappearance
-steam
-discord
