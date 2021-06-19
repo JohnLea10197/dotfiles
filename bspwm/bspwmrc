@@ -27,6 +27,7 @@ bsp-layout set tall -- --master-size 0.55
 #bsp-layout set tall
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Galculator state=floating
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
@@ -34,4 +35,4 @@ bspc rule -a Screenkey manage=off
 bspc rule -a Steam desktop=^6 follow=on
 bspc rule -a discord desktop=^7
 
-lxappearance
+#lxappearance
