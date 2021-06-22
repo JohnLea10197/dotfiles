@@ -137,12 +137,7 @@ type = custom/text
 content = 
 content-background = #4b94e3
 content-padding = 1
-click-left = rofi -show drun -show-icons -drun-icon-theme Papirus -theme /home/ethan/.config/rofi/sidetab.rasi
-
-[module/volume-icon]
-type = custom/text
-content = "" 
-content-padding = 1
+click-left = rofi -show drun -show-icons -drun-icon-theme Zafiro-icons -columns 20 -fullscreen -auto-select -theme /home/ethan/.config/rofi/alter.rasi
 
 [module/xwindow]
 type = internal/xwindow
