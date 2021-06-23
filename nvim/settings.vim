@@ -20,9 +20,12 @@ set expandtab
 set smartindent
 
 " convenient search options
-set ignorecase
 set smartcase
+set ignorecase
 set incsearch
+
+"enable mouse support (for when I'm too lazy to think about hotkeys lol)
+set mouse=a
 
 " more space for displaying messages
 set cmdheight=2
