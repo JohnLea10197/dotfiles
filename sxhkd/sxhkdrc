@@ -2,7 +2,7 @@ super + Return
     alacritty
 
 super + d
-    rofi -show drun -show-icons -drun-icon-theme Zafiro-icons -columns 20 -fullscreen -auto-select -theme /home/ethan/.config/rofi/alter.rasi
+    launcher_ribbon
 
 #Close focused window
 super + q
@@ -13,7 +13,7 @@ super + shift + r
     bspc wm -r
 
 super + shift + q
-    bspc quit
+    powermenu
 
 super + {h,j,k,l}
     bspc node -f {west,south,north,east}
@@ -36,4 +36,5 @@ super + button1 + drag
 super + shift + {h,j,k,l}
     bspc node -s {west,south,north,east}
 
-
+super + Print
+    scrot -m && notify-send -t 2000 "A screenshot has been captured"

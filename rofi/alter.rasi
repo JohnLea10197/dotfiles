@@ -8,12 +8,12 @@
     highlight: bold italic;
     scrollbar: true;
 
-    palette-bg0:     #44444440;
-    palette-bg1:     #44444440;
-    palette-fg0:     #c6c8d1;
-    palette-highlight: #6552ab;
-    palette-active: #525AAB;
-    palette-warning: #B65FB8;
+    palette-bg0:     #444444;
+    palette-bg1:     #cccccc;
+    palette-fg0:     #222222;
+    palette-highlight: #cccccc;
+    palette-active: #2f345a;
+    palette-warning: #cccccc;
 
     /* Base colors */
     background:                  @palette-bg0;
@@ -188,5 +188,5 @@ prompt {
 }
 
 element-icon {
-    size: 120;
+    size: 40;
 }

@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #600c0d0e
+background = #333333
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfe3ee 
@@ -32,11 +32,11 @@ alert = #bd2c40
 
 [bar/status]
 monitor = HDMI-0
-width = 100%
-height = 20
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
+width = 99%
+height = 25
+offset-x = 0.5%
+offset-y = 0.05%
+radius = 14.0
 fixed-center = true
 bottom = false
 
@@ -58,13 +58,9 @@ module-margin-right = 0
 font-0 = Source Code Pro:antialias=true:pixelsize=10;1
 font-1 = Symbols Nerd Font:fontformat=truetype:size=12:antialias=true;2
 
-modules-left = applauncher separator bspwm 
-modules-center = date 
+modules-left = applauncher date separator bspwm 
 modules-right = nowplaying mpdscroll mpd separator volume-icon pulseaudio separator
 
-tray-position = right
-tray-padding = 0
-tray-background = ${colors.background} 
 wm-restack = bspwm
 ;wm-restack = i3
 
@@ -82,11 +78,11 @@ cursor-scroll = ns-resize
 
 [bar/status-mon2]
 monitor = DP-3
-width = 100%
-height = 20
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
+width = 99%
+height = 25
+offset-x = 0.5%
+offset-y = 0.1%
+radius = 14.0
 fixed-center = true
 bottom = false
 
@@ -108,10 +104,12 @@ module-margin-right = 0
 font-0 = Source Code Pro:antialias=true:pixelsize=10;1
 font-1 = Symbols Nerd Font:fontformat=truetype:size=12:antialias=true;2
 
-modules-left = pulseaudio separator nowplaying mpdscroll mpd
-modules-center = date
-modules-right = bspwm 
+modules-left = separator pulseaudio separator nowplaying mpdscroll mpd 
+modules-right = bspwm date separator applauncher
 
+tray-position = center
+tray-padding = 0
+tray-background = ${colors.background} 
 wm-restack = bspwm
 ;wm-restack = i3
 
@@ -135,9 +133,11 @@ content-padding = 1
 [module/applauncher]
 type = custom/text
 content = 
-content-background = #4b94e3
+content-background = #324042
 content-padding = 1
-click-left = rofi -show drun -show-icons -drun-icon-theme Zafiro-icons -columns 20 -fullscreen -auto-select -theme /home/ethan/.config/rofi/alter.rasi
+; use this with the github repo "github.com/adi1090x/rofi"
+click-left = $HOME/.config/rofi/bin/./launcher_ribbon
+click-right = $HOME/.config/rofi/bin/./powermenu
 
 [module/xwindow]
 type = internal/xwindow
