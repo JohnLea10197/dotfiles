@@ -43,6 +43,9 @@ require('packer').startup(function(use)
     after = 'nvim-treesitter',
   }
 
+  -- icons plugin
+  use 'nvim-tree/nvim-web-devicons'
+
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
@@ -57,6 +60,8 @@ require('packer').startup(function(use)
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
+  -- File Manager (Telescope)
+  use { "nvim-telescope/telescope-file-browser.nvim" }
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }

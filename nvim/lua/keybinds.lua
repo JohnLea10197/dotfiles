@@ -33,6 +33,18 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
+-- navigate splits easily
+vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Split Traverse Left' })
+vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Split Traverse Down' })
+vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Split Traverse Up' })
+vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Split Traverse Right' })
+
+-- Open file browser
+vim.keymap.set('n', '<leader>fm', require("telescope").extensions.file_browser.file_browser(), { noremap = true, desc = '[F]ile [M]anager'})
+
+-- Delete buffer
+vim.keymap.set('n', '<leader>bd', ':bd!<CR>', { noremap = true, desc = '[D]elete [B]uffer' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)

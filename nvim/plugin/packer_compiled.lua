@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["material.nvim"] = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/material.nvim",
+    url = "https://github.com/marko-cerovac/material.nvim"
+  },
   ["neodev.nvim"] = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/neodev.nvim",
@@ -151,6 +156,11 @@ _G.packer_plugins = {
     path = "/home/ethan/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
+  },
   ["onedark.nvim"] = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/onedark.nvim",
@@ -165,6 +175,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ethan/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "/home/ethan/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     cond = { true },
