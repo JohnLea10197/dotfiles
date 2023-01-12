@@ -3,8 +3,8 @@
 dothome=$(pwd)
 
 #setup the environment variables for zsh so we can keep the home directory clean :)
-sudo rm -rf /etc/zsh/zshenv & echo "removed the zshenv file in /etc/zsh/zshenv"
-sudo cp zshenv /etc/zsh & echo -e "copied the repo's version of zshenv to /etc/zsh/zshenv \n"
+#sudo rm -rf /etc/zsh/zshenv & echo "removed the zshenv file in /etc/zsh/zshenv"
+#sudo cp zshenv /etc/zsh & echo -e "copied the repo's version of zshenv to /etc/zsh/zshenv \n"
 
 cd ~/.config
 
@@ -20,7 +20,8 @@ rm -rf openbox & echo "deleted existing symlink for openbox"
 rm -rf picom.conf & echo "deleted existing symlink for picom"
 rm -rf berry & echo "deleted existing symlink for berry window manager"
 rm -rf rofi & echo -e "deleted existing symlink for rofi's theme file"
-rm -rf zsh & echo -e "deleted existing symlink for zsh config files \n"
+rm -rf zsh & echo -e "deleted existing symlink for zsh config files"
+rm -rf pipewire & echo -e "deleted existing symlink for pipewire config files \n"
 
 #add new symlinks
 ln -s $dothome/mpd mpd & echo "successfully created symlink for mpd"
@@ -33,6 +34,7 @@ ln -s $dothome/openbox openbox & echo "successfully created symlink for openbox"
 ln -s $dothome/picom.conf picom.conf & echo "successfully created symlink for picom"
 ln -s $dothome/berry berry & echo "successfully created symlink for berry window manager"
 ln -s $dothome/rofi rofi & echo "successfully created symlink for rofi"
+ln -s $dothome/pipewire pipewire & echo "successfully created symlink for pipewire"
 ln -s $dothome/zsh zsh & echo -e "successfully created symlink for zsh \n"
 
 #add new symlinks that aren't in the usual .config directory
