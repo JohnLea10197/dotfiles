@@ -15,6 +15,8 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 -- Keymap for leaving insert mode really quickly
 vim.keymap.set('i', 'jk', '<Esc>l')
+vim.keymap.set('i', 'jj', '<Esc>lj')
+vim.keymap.set('i', 'kk', '<Esc>lk')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -40,10 +42,11 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Split Traverse Up' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Split Traverse Right' })
 
 -- Open file browser
-vim.keymap.set('n', '<leader>fm', require("telescope").extensions.file_browser.file_browser(), { noremap = true, desc = '[F]ile [M]anager'})
+-- why doesn't require("telescope").extensions.file_browser.file_browser() work here?
+vim.keymap.set('n', '<leader>fm', ':Telescope file_browser<CR>', { noremap = true, desc = '[F]ile [M]anager'})
 
 -- Delete buffer
-vim.keymap.set('n', '<leader>bd', ':bd!<CR>', { noremap = true, desc = '[D]elete [B]uffer' })
+vim.keymap.set('n', '<leader>bd', ':bd!<CR>', { desc = '[D]elete [B]uffer' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
@@ -51,6 +54,16 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
+-- See `:help telescope.builtin`
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer]' })
 
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
@@ -96,14 +109,3 @@ local on_attach = function(_, bufnr)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
 end
-
--- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer]' })
