@@ -43,7 +43,7 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Split Traverse Right' })
 
 -- Open file browser
 -- why doesn't require("telescope").extensions.file_browser.file_browser() work here?
-vim.keymap.set('n', '<leader>fm', ':Telescope file_browser<CR>', { noremap = true, desc = '[F]ile [M]anager'})
+vim.keymap.set('n', '<leader>fm', ':NvimTreeToggle<CR>', { noremap = true, desc = '[F]ile [M]anager'})
 
 -- Delete buffer
 vim.keymap.set('n', '<leader>bd', ':bd!<CR>', { desc = '[D]elete [B]uffer' })
