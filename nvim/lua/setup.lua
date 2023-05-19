@@ -47,6 +47,8 @@ require('telescope').setup {
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 require('telescope').load_extension 'file_browser'
+require('telescope').load_extension('projects')
+require('telescope').extensions.projects.projects{}
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -232,6 +234,12 @@ require("nvim-tree").setup({
   },
   filters = {
     dotfiles = true,
+  },
+  sync_root_with_cwd = true,
+  respect_buf_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_root = true
   },
 })
 
