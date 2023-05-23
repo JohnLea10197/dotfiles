@@ -66,6 +66,10 @@ require('packer').startup(function(use)
   -- File Manager (nvim-tree)
   use { "nvim-tree/nvim-tree.lua" }
 
+  -- debugger (nvim-dap)
+  use { "mfussenegger/nvim-dap"}
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 

@@ -86,6 +86,7 @@ local on_attach = function(_, bufnr)
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
+
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
@@ -95,7 +96,7 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+ -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
@@ -126,14 +127,17 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
-
-  sumneko_lua = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
 }
+
+ vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
+ vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
+ vim.keymap.set('n', '<F11>', function() require('dap').step_into() end)
+ vim.keymap.set('n', '<F12>', function() require('dap').step_out() end)
+ vim.keymap.set('n', '<Leader>b', function() require('dap').toggle_breakpoint() end)
+ vim.keymap.set('n', '<Leader>B', function() require('dap').set_breakpoint() end)
+ vim.keymap.set('n', '<Leader>lp', function() require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end)
+ vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end)
+ vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'

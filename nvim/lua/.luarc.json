@@ -28,6 +28,7 @@
         "/home/ethan/.local/share/nvim/site/pack/packer/start/telescope-file-browser.nvim/lua",
         "/home/ethan/.local/share/nvim/site/pack/packer/start/telescope.nvim/lua",
         "/home/ethan/.local/share/repos/dotfiles/nvim/lua",
-        "${3rd}/luv/library"
+        "${3rd}/luv/library",
+        "${3rd}/luassert/library"
     ]
 }
